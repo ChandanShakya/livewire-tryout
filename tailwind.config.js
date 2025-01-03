@@ -1,5 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import daisyui from "daisyui"
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -9,16 +7,11 @@ export default {
         './resources/**/*.js',
         './resources/**/*.vue',
     ],
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
     plugins: [
-        daisyui:{
-            themes: ["light", "dark", "cupcake"],
-        },
+        require("@tailwindcss/typography"),
+        require("daisyui"),
     ],
+    daisyui: {
+        themes: ["light", "dark", "cupcake", "cyberpunk", "retro"],
+    }
 };
